@@ -1,4 +1,4 @@
-package ua.kh.gerasimyuk.learn.rmi;
+package ua.kh.gerasimyuk.learn.rmi.Interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
