@@ -20,7 +20,7 @@ public class ClientMain {
         while (e.hasMoreElements()){
             System.out.println(e.nextElement().getName());
 
-            String url = "rmi://localhost/warehouse_central";
+            String url = "rmi://localhost/central_warehouse";
             Warehouse central = (Warehouse)naming.lookup(url);
             String descr = "Blackwall";
             double price = central.getPrice(descr);

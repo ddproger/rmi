@@ -7,6 +7,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 /**
  * Created by gerasymiuk on 16.01.17.
@@ -14,6 +16,7 @@ import java.rmi.RemoteException;
 public class ServerMain {
     public static void main(String[] args) throws RemoteException, NamingException {
         Warehouse centralWarehouse = new WarehouseImpl();
+        Registry reg = LocateRegistry.createRegistry(1099);
         Context namingContext = new InitialContext();
         try {
             namingContext.bind("rmi://localhost:1099/central_warehouse", centralWarehouse);
